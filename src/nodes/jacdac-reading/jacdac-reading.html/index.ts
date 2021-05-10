@@ -12,6 +12,7 @@ RED.nodes.registerType<JacdacReadingEditorNodeProperties>("jacdac-reading", {
     service: { value: "" },
     serviceIndex: { value: undefined },
     register: { value: "" },
+    updates: { value: true }
   },
   inputs: 0,
   outputs: 1,
