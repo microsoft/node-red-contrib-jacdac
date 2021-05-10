@@ -32,8 +32,7 @@ const nodeInit: NodeInitializer = (RED): void => {
       || evt.code === parseInt(eventFilter, 16)
       || (evt.name && evt.name.toLocaleLowerCase() === eventFilter.toLocaleLowerCase())
 
-    bus.on(CONNECTION_STATE, updateStatus)
-    bus.on(DEVICE_ANNOUNCE, (dev: JDDevice) => {
+    const registerDevice = (dev: JDDevice) => {
       this.log(`device announce: ${dev}`)
       if (filterDevice(dev)) {
         // register events
@@ -58,14 +57,16 @@ const nodeInit: NodeInitializer = (RED): void => {
           }
         }
       }
-    })
-    this.on("input", (msg, send, done) => {
-      send(msg);
-      done();
-    });
+    }
+
+    bus.on(CONNECTION_STATE, updateStatus)
+    bus.on(DEVICE_ANNOUNCE, registerDevice)
 
     updateStatus()
-    bus.connect()
+    bus.connect().then(() => {
+      for (const dev of bus.devices({ ignoreSelf: true }))
+        registerDevice(dev)
+    })
   }
 
   RED.nodes.registerType("jacdac-event", JacdacEventNodeConstructor);
