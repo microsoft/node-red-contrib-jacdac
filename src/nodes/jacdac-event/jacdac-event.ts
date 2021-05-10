@@ -1,7 +1,7 @@
 import { NodeInitializer } from "node-red";
 import { JacdacEventNode, JacdacEventNodeDef } from "./modules/types";
 import { connectNode } from "../shared/bus"
-import { EVENT, JDDevice } from "jacdac-ts";
+import { EVENT, JDDevice, JDEvent } from "jacdac-ts";
 import { createDeviceFilter, createEventFilter, createServiceFilter } from "../shared/filters";
 
 const nodeInit: NodeInitializer = (RED): void => {
@@ -15,29 +15,32 @@ const nodeInit: NodeInitializer = (RED): void => {
     const filterService = createServiceFilter(config)
     const filterEvent = createEventFilter(config)
 
+    const sendEvent = (evt: JDEvent) => {
+      const { service } = evt
+      const { device } = service
+      this.debug(`event ${evt}`)
+      this.send({
+        payload: {
+          deviceId: device.deviceId,
+          deviceShortId: device.shortId,
+          serviceIndex: service.serviceIndex,
+          serviceInstanceName: service.instanceName,
+          serviceName: service.name,
+          eventCode: evt.code,
+          eventName: evt.name,
+          data: evt.data
+        }
+      })
+    }
+
     const registerDevice = (dev: JDDevice) => {
+      if (!filterDevice(dev)) return;
+
       this.log(`registering device ${dev}`)
-      if (filterDevice(dev)) {
-        // register events
-        for (const srv of dev.services().filter(filterService)) {
-          for (const evt of srv.events.filter(filterEvent)) {
-            this.log(`registering event ${evt}`)
-            evt.on(EVENT, () => {
-              this.debug(`event ${evt}`)
-              this.send({
-                payload: {
-                  deviceId: dev.deviceId,
-                  deviceShortId: dev.shortId,
-                  serviceIndex: srv.serviceIndex,
-                  serviceInstanceName: srv.register
-                  serviceName: srv.name,
-                  eventCode: evt.code,
-                  eventName: evt.name,
-                  data: evt.data
-                }
-              })
-            })
-          }
+      for (const srv of dev.services().filter(filterService)) {
+        for (const evt of srv.events.filter(filterEvent)) {
+          this.log(`registering event ${evt}`)
+          evt.on(EVENT, sendEvent)
         }
       }
     }

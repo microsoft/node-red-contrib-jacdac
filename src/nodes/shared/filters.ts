@@ -18,7 +18,7 @@ export function createServiceFilter(options: JacdacServiceFilterOptions) {
         || srv.serviceClass === parseInt(service, 16)
         || (srv.name && srv.name.toLocaleLowerCase() === service.toLocaleLowerCase()))
         && (serviceIndex === undefined || serviceIndex == srv.serviceIndex)
-        && (!instanceNameRx || instanceNameRx.test(srv.register(SystemReg.InstanceName).stringValue))
+        && (!instanceNameRx || instanceNameRx.test(srv.instanceName))
 }
 
 export function createEventFilter(options: JacdacEventFilterOptions) {
