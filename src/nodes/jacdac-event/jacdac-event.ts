@@ -29,7 +29,7 @@ const nodeInit: NodeInitializer = (RED): void => {
                   deviceId: dev.deviceId,
                   deviceShortId: dev.shortId,
                   serviceIndex: srv.serviceIndex,
-                  serviceClass: srv.serviceClass,
+                  serviceInstanceName: srv.register
                   serviceName: srv.name,
                   eventCode: evt.code,
                   eventName: evt.name,

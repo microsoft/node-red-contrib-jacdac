@@ -1,4 +1,4 @@
-import { JDDevice, JDEvent, JDRegister, JDService } from "jacdac-ts";
+import { JDDevice, JDEvent, JDRegister, JDService, SystemReg } from "jacdac-ts";
 import { bus } from "./bus";
 import { JacdacDeviceFilterOptions, JacdacEventFilterOptions, JacdacRegisterFilterOptions, JacdacServiceFilterOptions } from "./types"
 
@@ -11,11 +11,14 @@ export function createDeviceFilter(options: JacdacDeviceFilterOptions) {
 }
 
 export function createServiceFilter(options: JacdacServiceFilterOptions) {
-    const { service, serviceIndex } = options
+    const { service, serviceIndex, serviceInstanceName } = options
+
+    const instanceNameRx = serviceInstanceName ? new RegExp(serviceInstanceName, "i") : undefined
     return (srv: JDService) => (!service
         || srv.serviceClass === parseInt(service, 16)
         || (srv.name && srv.name.toLocaleLowerCase() === service.toLocaleLowerCase()))
         && (serviceIndex === undefined || serviceIndex == srv.serviceIndex)
+        && (!instanceNameRx || instanceNameRx.test(srv.register(SystemReg.InstanceName).stringValue))
 }
 
 export function createEventFilter(options: JacdacEventFilterOptions) {

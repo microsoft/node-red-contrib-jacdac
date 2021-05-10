@@ -14,6 +14,10 @@ export interface JacdacServiceFilterOptions {
      * A filter to specify a service index
      */
     serviceIndex?: number
+    /**
+     * A case-insensitive regular expression to match the service instance name
+     */
+    serviceInstanceName?: string
 }
 export interface JacdacEventFilterOptions {
     /**

@@ -11,6 +11,7 @@ RED.nodes.registerType<JacdacEventEditorNodeProperties>("jacdac-event", {
     device: { value: "" },
     service: { value: "" },
     serviceIndex: { value: undefined },
+    serviceInstanceName: { value: undefined },
     event: { value: "" },
   },
   inputs: 0,
