@@ -13,13 +13,25 @@ This node uses [node-usb](https://github.com/tessel/node-usb) which has specific
 
 ## Install
 
-Use the Plugin manager in node-red or run the following command in your Node-RED user directory - typically ``~/.node-red``
+Use Palette manager in node-red or run the following command in your Node-RED user directory - typically ``~/.node-red``
 
     npm install node-red-contrib-jacdac
 
 ## Jacdac firmware
 
-You will need to connect a device with Jacdac firmware and USB port. [Read more](https://microsoft.github.io/jacdac-docs/clients/hardware/makecode/) about flashing Jacdac firmware in popular embedded devices such as the micro:bit V2 .
+You will need to connect a device with Jacdac firmware and USB port. [Read more](https://microsoft.github.io/jacdac-docs/clients/hardware/makecode/) about flashing Jacdac firmware in popular embedded devices such as the micro:bit V2.
+
+## Nodes
+
+### jacdac-event
+
+This node listens for [Jacdac events](https://microsoft.github.io/jacdac-docs/reference/protocol#events) and send them in the payload. 
+You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which events are available.
+
+### jacdac-read
+
+This node listens for [Jacdac reading](https://microsoft.github.io/jacdac-docs/reference/protocol#registers) and send them in the payload. 
+You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) (filter by ``Sensor``) to discover which reading registers are avilable are available.
 
 ## Developer section
 ### Adding Nodes
