@@ -1,13 +1,22 @@
 # Node-RED Jacdac Node
 
-[Jacdac](https://aka.ms/jacdac) is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals such as sensors and actuators. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
+[Node-RED](https://nodered.org) nodes to talk to [Jacdac](https://aka.ms/jacdac).
+
+Jacdac is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals such as sensors and actuators. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
 
 ## Requirements
 
-This node uses [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements.
+This node uses [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements. If your node-red process crashes with 
+``LIBUSB_ERROR_NOT_SUPPORTED``, your USB setup is not right.
 
+## Install
 
-## Adding Nodes
+Use the Plugin manager in node-red or run the following command in your Node-RED user directory - typically ``~/.node-red``
+
+    npm install node-red-contrib-jacdac
+
+## Developer section
+### Adding Nodes
 
 You can quickly scaffold a new node and add it to the node set. Use the following command to create `my-new-node-type` node:
 
@@ -33,7 +42,7 @@ or
 yarn add-node my-new-node-config config
 ```
 
-## Developing Nodes
+### Developing Nodes
 
 Build & Test in Watch mode:
 
@@ -41,7 +50,7 @@ Build & Test in Watch mode:
 yarn dev
 ```
 
-## Building Node Set
+### Building Node Set
 
 Create a production build:
 
