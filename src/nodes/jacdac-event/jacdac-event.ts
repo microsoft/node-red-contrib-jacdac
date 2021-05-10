@@ -19,10 +19,10 @@ const nodeInit: NodeInitializer = (RED): void => {
         : { fill: "red", shape: "ring" })
     }
 
-    const filterDevice = (dev: JDDevice) => !deviceFilter
-      || (bus.selfDevice === dev)
-      || deviceFilter === dev.deviceId
-      || deviceFilter === dev.shortId
+    const filterDevice = (dev: JDDevice) => bus.selfDevice !== dev &&
+      (!deviceFilter
+        || deviceFilter.toLocaleLowerCase() === dev.deviceId.toLocaleLowerCase()
+        || deviceFilter.toLocaleLowerCase() === dev.shortId.toLocaleLowerCase())
 
     const filterService = (srv: JDService) => !serviceFilter
       || srv.serviceClass === parseInt(serviceFilter, 16)
