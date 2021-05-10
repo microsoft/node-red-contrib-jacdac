@@ -33,7 +33,7 @@ const nodeInit: NodeInitializer = (RED): void => {
       || (evt.name && evt.name.toLocaleLowerCase() === eventFilter.toLocaleLowerCase())
 
     const registerDevice = (dev: JDDevice) => {
-      this.log(`device announce: ${dev}`)
+      this.log(`registering device ${dev}`)
       if (filterDevice(dev)) {
         // register events
         for (const srv of dev.services().filter(filterService)) {
@@ -69,6 +69,7 @@ const nodeInit: NodeInitializer = (RED): void => {
     bus.on(CONNECT, registerAllDevices)
 
     updateStatus()
+    registerAllDevices()
     bus.connect()
   }
 

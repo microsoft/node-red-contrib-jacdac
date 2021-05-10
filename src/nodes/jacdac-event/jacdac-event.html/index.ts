@@ -8,6 +8,9 @@ RED.nodes.registerType<JacdacEventEditorNodeProperties>("jacdac-event", {
   color: "#DEBD5C",
   defaults: {
     name: { value: "" },
+    device: { value: "" },
+    service: { value: "" },
+    event: { value: "" },
   },
   inputs: 0,
   outputs: 1,
