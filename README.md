@@ -4,6 +4,8 @@
 
 Jacdac is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals such as sensors and actuators. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
 
+The nodes connect to a Jacdac bus via a USB and allow to listen for events or sensor readings.
+
 ## Requirements
 
 This node uses [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements. If your node-red process crashes with 
@@ -14,6 +16,10 @@ This node uses [node-usb](https://github.com/tessel/node-usb) which has specific
 Use the Plugin manager in node-red or run the following command in your Node-RED user directory - typically ``~/.node-red``
 
     npm install node-red-contrib-jacdac
+
+## Jacdac firmware
+
+You will need to connect a device with Jacdac firmware and USB port. [Read more](https://microsoft.github.io/jacdac-docs/clients/hardware/makecode/) about flashing Jacdac firmware in popular embedded devices such as the micro:bit V2 .
 
 ## Developer section
 ### Adding Nodes
