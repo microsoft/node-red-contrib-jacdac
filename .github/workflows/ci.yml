@@ -17,10 +17,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: yarn, lint, build and test
+      - name: yarn, build and test
         run: |
           yarn
-          yarn lint
           yarn build
           yarn test
       - run: npx semantic-release
