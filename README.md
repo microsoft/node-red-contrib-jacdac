@@ -1,14 +1,57 @@
-# Project
+# Node-RED Jacdac Node
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+[Jacdac](https://aka.ms/jacdac) is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals such as sensors and actuators. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
 
-As the maintainer of this project, please make a few updates:
+## Requirements
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+This node uses [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements.
+
+
+## Adding Nodes
+
+You can quickly scaffold a new node and add it to the node set. Use the following command to create `my-new-node-type` node:
+
+```
+yarn add-node my-new-node-type
+```
+
+The node generator is based on mustache templates. At the moment there are three templates available:
+
+- `blank` (used by default) - basic node for Node-RED >=1.0
+- `blank-0` - node with a backward compatibility for running on Node-RED <1.0
+- `config` - configuration node
+
+To generate a node using a template, specify it as the third argument:
+
+```
+yarn add-node my-new-node-type blank
+```
+
+or
+
+```
+yarn add-node my-new-node-config config
+```
+
+## Developing Nodes
+
+Build & Test in Watch mode:
+
+```
+yarn dev
+```
+
+## Building Node Set
+
+Create a production build:
+
+```
+yarn build
+```
+
+## Acknoledgments
+
+This repo was built using the [node-red TypeScript starter](https://github.com/alexk111/node-red-node-typescript-starter).
 
 ## Contributing
 
