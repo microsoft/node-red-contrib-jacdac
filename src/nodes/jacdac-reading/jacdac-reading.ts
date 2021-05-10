@@ -1,4 +1,4 @@
-import { JDDevice, REPORT_RECEIVE } from "jacdac-ts";
+import { JDDevice, REPORT_UPDATE } from "jacdac-ts";
 import { NodeInitializer } from "node-red";
 import { connectNode } from "../shared/bus";
 import { createDeviceFilter, createRegisterFilter, createServiceFilter } from "../shared/filters";
@@ -22,18 +22,21 @@ const nodeInit: NodeInitializer = (RED): void => {
         for (const srv of dev.services().filter(filterService)) {
           for (const reg of srv.registers().filter(filterRegister)) {
             this.log(`registering register ${reg}`)
-            reg.on(REPORT_RECEIVE, () => {
-              this.debug(`report ${reg}`)
+            // register this register will automatically automatically have the bus
+            // refresh its value
+            reg.on(REPORT_UPDATE, () => {
               this.send({
                 payload: {
-                  deviceId: dev.deviceId,
+                  data: reg.unpackedValue,
                   deviceShortId: dev.shortId,
                   serviceIndex: srv.serviceIndex,
-                  serviceClass: srv.serviceClass,
                   serviceName: srv.name,
-                  eventCode: reg.code,
-                  eventName: reg.name,
-                  data: reg.unpackedValue
+                  registerName: reg.name,
+
+                  // low-level info
+                  deviceId: dev.deviceId,
+                  serviceClass: srv.serviceClass,
+                  registerCode: reg.code,
                 }
               })
             })
