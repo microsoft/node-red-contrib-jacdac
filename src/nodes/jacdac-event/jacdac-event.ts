@@ -1,7 +1,7 @@
 import { NodeInitializer } from "node-red";
 import { JacdacEventNode, JacdacEventNodeDef } from "./modules/types";
 import { bus } from "../shared/bus"
-import { CONNECTION_STATE, DEVICE_ANNOUNCE, EVENT, JDDevice, JDEvent, JDService } from "jacdac-ts";
+import { CONNECT, CONNECTION_STATE, DEVICE_ANNOUNCE, EVENT, JDDevice, JDEvent, JDService } from "jacdac-ts";
 
 const nodeInit: NodeInitializer = (RED): void => {
   function JacdacEventNodeConstructor(
@@ -59,14 +59,17 @@ const nodeInit: NodeInitializer = (RED): void => {
       }
     }
 
-    bus.on(CONNECTION_STATE, updateStatus)
-    bus.on(DEVICE_ANNOUNCE, registerDevice)
-
-    updateStatus()
-    bus.connect().then(() => {
+    const registerAllDevices = () => {
       for (const dev of bus.devices({ ignoreSelf: true }))
         registerDevice(dev)
-    })
+    }
+
+    bus.on(CONNECTION_STATE, updateStatus)
+    bus.on(DEVICE_ANNOUNCE, registerDevice)
+    bus.on(CONNECT, registerAllDevices)
+
+    updateStatus()
+    bus.connect()
   }
 
   RED.nodes.registerType("jacdac-event", JacdacEventNodeConstructor);
