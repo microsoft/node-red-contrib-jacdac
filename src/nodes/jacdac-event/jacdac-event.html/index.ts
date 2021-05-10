@@ -15,8 +15,8 @@ RED.nodes.registerType<JacdacEventEditorNodeProperties>("jacdac-event", {
   inputs: 0,
   outputs: 1,
   icon: "jacdac-event.png",
-  paletteLabel: "Jacdac event",
+  paletteLabel: "jacdac event",
   label: function () {
-    return this.name || "Jacdac event";
+    return this.name || "jacdac event";
   },
 });
