@@ -11,10 +11,11 @@ export function createDeviceFilter(options: JacdacDeviceFilterOptions) {
 }
 
 export function createServiceFilter(options: JacdacServiceFilterOptions) {
-    const { service } = options
-    return (srv: JDService) => !service
+    const { service, serviceIndex } = options
+    return (srv: JDService) => (!service
         || srv.serviceClass === parseInt(service, 16)
-        || (srv.name && srv.name.toLocaleLowerCase() === service.toLocaleLowerCase())
+        || (srv.name && srv.name.toLocaleLowerCase() === service.toLocaleLowerCase()))
+        && (serviceIndex === undefined || serviceIndex == srv.serviceIndex)
 }
 
 export function createEventFilter(options: JacdacEventFilterOptions) {

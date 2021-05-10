@@ -10,6 +10,10 @@ export interface JacdacServiceFilterOptions {
      * A filter to select a specific service. Name or code of the service
      */
     service?: string
+    /**
+     * A filter to specify a service index
+     */
+    serviceIndex?: number
 }
 export interface JacdacEventFilterOptions {
     /**
