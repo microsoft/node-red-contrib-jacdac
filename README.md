@@ -19,7 +19,14 @@ Use Palette manager in node-red or run the following command in your Node-RED us
 
 ## Jacdac firmware
 
-You will need to connect a device with Jacdac firmware and USB port. [Read more](https://microsoft.github.io/jacdac-docs/clients/hardware/makecode/) about flashing Jacdac firmware in popular embedded devices such as the micro:bit V2.
+You will need to connect a device with Jacdac firmware and USB port. 
+You can learn more about compatible hardware at https://aka.ms/jacdac.
+
+If you have a micro:bit V2 at hand, you can convert it into a Jacdac device by dropping
+custom firmware.
+
+* go to https://makecode.microbit.org/beta#pub:github:microsoft/pxt-jacdac/devices/microbit
+* download to your micro:bit V2
 
 ## Nodes
 
@@ -31,7 +38,10 @@ You can browse the [services specification catalog](https://microsoft.github.io/
 ### jacdac-read
 
 This node listens for [Jacdac reading](https://microsoft.github.io/jacdac-docs/reference/protocol#registers) and send them in the payload. 
-You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) (filter by ``Sensor``) to discover which reading registers are avilable are available.
+You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which registers are avilable are available.
+
+By default, the node looks for sensor reading, value and intensity registers. 
+But you can override this behavior by customizing the register filters by name or code.
 
 ## Developer section
 ### Adding Nodes
