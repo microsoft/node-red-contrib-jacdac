@@ -1,4 +1,4 @@
-import { JDDevice, REPORT_RECEIVE, REPORT_UPDATE } from "jacdac-ts";
+import { JDDevice, JDRegister, REPORT_RECEIVE, REPORT_UPDATE } from "jacdac-ts";
 import { NodeInitializer } from "node-red";
 import { connectNode } from "../shared/bus";
 import { createDeviceFilter, createRegisterFilter, createServiceFilter } from "../shared/filters";
@@ -16,6 +16,25 @@ const nodeInit: NodeInitializer = (RED): void => {
     const filterService = createServiceFilter(config)
     const filterRegister = createRegisterFilter(config)
 
+    const sendRegister = (reg: JDRegister) => {
+      const { service: srv } = reg
+      const { device: dev } = srv
+      this.send({
+        payload: {
+          data: reg.objectValue,
+          deviceShortId: dev.shortId,
+          serviceIndex: srv.serviceIndex,
+          serviceName: srv.name,
+          registerName: reg.name,
+
+          // low-level info
+          deviceId: dev.deviceId,
+          serviceClass: srv.serviceClass,
+          registerCode: reg.code,
+        }
+      })
+    }
+
     const { updates } = config
     const reportEvent = updates ? REPORT_UPDATE : REPORT_RECEIVE
 
@@ -29,28 +48,11 @@ const nodeInit: NodeInitializer = (RED): void => {
             // register this register will automatically 
             // automatically have the bus
             // refresh its value
-            reg.on(reportEvent, () => {
-              this.send({
-                payload: {
-                  data: reg.objectValue,
-                  deviceShortId: dev.shortId,
-                  serviceIndex: srv.serviceIndex,
-                  serviceName: srv.name,
-                  registerName: reg.name,
-
-                  // low-level info
-                  deviceId: dev.deviceId,
-                  serviceClass: srv.serviceClass,
-                  registerCode: reg.code,
-                }
-              })
-            })
+            reg.on(reportEvent, sendRegister)
           }
         }
       }
     }
-
-    // we need to make sure that devices are streaming
 
     connectNode(this, registerDevice)
   }
