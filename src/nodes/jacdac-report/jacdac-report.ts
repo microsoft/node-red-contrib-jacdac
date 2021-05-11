@@ -2,12 +2,12 @@ import { JDDevice, JDRegister, REPORT_RECEIVE, REPORT_UPDATE } from "jacdac-ts";
 import { NodeInitializer } from "node-red";
 import { connectNode } from "../shared/bus";
 import { createDeviceFilter, createRegisterFilter, createServiceFilter } from "../shared/filters";
-import { JacdacReadingNode, JacdacReadingNodeDef } from "./modules/types";
+import { JacdacReportNode, JacdacReportNodeDef } from "./modules/types";
 
 const nodeInit: NodeInitializer = (RED): void => {
-  function JacdacReadingNodeConstructor(
-    this: JacdacReadingNode,
-    config: JacdacReadingNodeDef
+  function JacdacReportNodeConstructor(
+    this: JacdacReportNode,
+    config: JacdacReportNodeDef
   ): void {
     RED.nodes.createNode(this, config);
 
@@ -57,7 +57,7 @@ const nodeInit: NodeInitializer = (RED): void => {
     connectNode(this, registerDevice)
   }
 
-  RED.nodes.registerType("jacdac-reading", JacdacReadingNodeConstructor);
+  RED.nodes.registerType("jacdac-report", JacdacReportNodeConstructor);
 };
 
 export = nodeInit;

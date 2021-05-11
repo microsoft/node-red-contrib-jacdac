@@ -1,9 +1,9 @@
 import { EditorRED } from "node-red";
-import { JacdacReadingEditorNodeProperties } from "./modules/types";
+import { JacdacReportEditorNodeProperties } from "./modules/types";
 
 declare const RED: EditorRED;
 
-RED.nodes.registerType<JacdacReadingEditorNodeProperties>("jacdac-reading", {
+RED.nodes.registerType<JacdacReportEditorNodeProperties>("jacdac-report", {
   category: "function",
   color: "#DEBD5C",
   defaults: {
@@ -17,9 +17,9 @@ RED.nodes.registerType<JacdacReadingEditorNodeProperties>("jacdac-reading", {
   },
   inputs: 0,
   outputs: 1,
-  icon: "jacdac-reading.png",
-  paletteLabel: "jacdac read",
+  icon: "jacdac-report.png",
+  paletteLabel: "jacdac report",
   label: function () {
-    return this.name || "jacdac read";
+    return this.name || "jacdac report";
   },
 });

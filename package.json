@@ -25,7 +25,7 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "jacdac-reading": "./dist/nodes/jacdac-reading/jacdac-reading.js",
+      "jacdac-report": "./dist/nodes/jacdac-report/jacdac-report.js",
       "jacdac-event": "./dist/nodes/jacdac-event/jacdac-event.js"
     }
   },
