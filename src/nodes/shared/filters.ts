@@ -28,9 +28,15 @@ export function createEventFilter(options: JacdacEventFilterOptions) {
         || (evt.name && evt.name.toLocaleLowerCase() === event.toLocaleLowerCase())
 }
 
+const defaultRegisters = [
+    SystemReg.Reading,
+    SystemReg.Value,
+    SystemReg.Intensity
+];
+
 export function createRegisterFilter(options: JacdacRegisterFilterOptions) {
     const { register } = options
-    return (reg: JDRegister) => !register
-        || reg.code === parseInt(register, 16)
-        || (reg.name && reg.name.toLocaleLowerCase() === register.toLocaleLowerCase())
+    return (reg: JDRegister) => (!register && defaultRegisters.indexOf(reg.code) > -1)
+        || (register && reg.code === parseInt(register, 16))
+        || (register && (reg.name && reg.name.toLocaleLowerCase() === register.toLocaleLowerCase()))
 }

@@ -23,8 +23,9 @@ const nodeInit: NodeInitializer = (RED): void => {
       this.log(`registering device ${dev}`)
       if (filterDevice(dev)) {
         for (const srv of dev.services().filter(filterService)) {
+          this.log(`scanning service ${srv.name}`)
           for (const reg of srv.registers().filter(filterRegister)) {
-            this.log(`registering register ${reg}`)
+            this.log(`registering register ${reg.name}`)
             // register this register will automatically 
             // automatically have the bus
             // refresh its value
