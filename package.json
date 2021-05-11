@@ -6,6 +6,7 @@
     "node-red",
     "jacdac"
   ],
+  "repository": "github:microsoft/node-red-contrib-jacdac",
   "scripts": {
     "add-node": "node ./utils/add-node.js",
     "copy": "copyfiles -u 2 \"./src/nodes/**/*.{png,svg}\" \"./dist/nodes/\"",
