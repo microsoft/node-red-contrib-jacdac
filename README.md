@@ -53,8 +53,8 @@ But you can override this behavior by customizing the register filters by name o
 This node sends [Jacdac commands](https://microsoft.github.io/jacdac-docs/reference/protocol/#commands)
 to services. The results of command can be inferred from the content of the registers.
 
-You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which commands are available and how their payload should be formatted.
-
+You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which commands are available and how their payload should be formatted. The payload can either be a number, string or boolean for simple t
+ypes. Or an array or JSON object for complex requests.
 ## Developer section
 ### Adding Nodes
 
