@@ -25,8 +25,13 @@ You can learn more about compatible hardware at https://aka.ms/jacdac.
 If you have a micro:bit V2 at hand, you can convert it into a Jacdac device by dropping
 custom firmware.
 
-* go to https://makecode.microbit.org/beta#pub:github:microsoft/pxt-jacdac/devices/microbit
+* go to https://makecode.microbit.org/beta
+* create a new project
+* click on the project settings, ``Extensions``
+* search for https://github.com/microsoft/pxt-jacdac/devices/microbit and import it
+* use the blocks under ``Servers`` to start which sensor you want
 * download to your micro:bit V2
+* enjoy data!
 
 ## Nodes
 
