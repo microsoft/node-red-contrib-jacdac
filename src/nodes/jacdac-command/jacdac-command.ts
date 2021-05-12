@@ -1,3 +1,4 @@
+import { objectToPacked } from "jacdac-ts";
 import { NodeInitializer } from "node-red";
 import { bus, connectStatus } from "../shared/bus";
 import {
