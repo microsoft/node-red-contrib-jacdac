@@ -11,7 +11,6 @@ const nodeInit: NodeInitializer = (RED): void => {
   ): void {
     RED.nodes.createNode(this, config);
 
-
     const filterDevice = createDeviceFilter(config)
     const filterService = createServiceFilter(config)
     const filterRegister = createRegisterFilter(config)
