@@ -32,3 +32,7 @@ export interface JacdacRegisterFilterOptions {
      */
     register?: string
 }
+
+export interface JacdacCommandFilterOptions {
+    command: string
+}

@@ -35,13 +35,20 @@ custom firmware.
 This node listens for [Jacdac events](https://microsoft.github.io/jacdac-docs/reference/protocol#events) and send them in the payload. 
 You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which events are available.
 
-### jacdac-read
+### jacdac-report
 
-This node listens for [Jacdac reading](https://microsoft.github.io/jacdac-docs/reference/protocol#registers) and send them in the payload. 
+This node reads [Jacdac registers](https://microsoft.github.io/jacdac-docs/reference/protocol#registers) and send them in the payload. 
 You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which registers are avilable are available.
 
 By default, the node looks for sensor reading, value and intensity registers. 
 But you can override this behavior by customizing the register filters by name or code.
+
+### jacdac-command
+
+This node sends [Jacdac commands](https://microsoft.github.io/jacdac-docs/reference/protocol/#commands)
+to services. The results of command can be inferred from the content of the registers.
+
+You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which commands are available and how their payload should be formatted.
 
 ## Developer section
 ### Adding Nodes

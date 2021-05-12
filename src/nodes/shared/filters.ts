@@ -1,6 +1,6 @@
 import { JDDevice, JDEvent, JDRegister, JDService, SystemReg } from "jacdac-ts";
 import { bus } from "./bus";
-import { JacdacDeviceFilterOptions, JacdacEventFilterOptions, JacdacRegisterFilterOptions, JacdacServiceFilterOptions } from "./types"
+import { JacdacCommandFilterOptions, JacdacDeviceFilterOptions, JacdacEventFilterOptions, JacdacRegisterFilterOptions, JacdacServiceFilterOptions } from "./types"
 
 export function createDeviceFilter(options: JacdacDeviceFilterOptions) {
     const { device } = options;
@@ -39,4 +39,15 @@ export function createRegisterFilter(options: JacdacRegisterFilterOptions) {
     return (reg: JDRegister) => (!register && defaultRegisters.indexOf(reg.code) > -1)
         || (register && reg.code === parseInt(register, 16))
         || (register && (reg.name && reg.name.toLocaleLowerCase() === register.toLocaleLowerCase()))
+}
+
+export function createCommandFilter(options: JacdacCommandFilterOptions) {
+    const { command } = options;
+    return (srv: JDService) => {
+        const { specification } = srv
+        const code = parseInt(command, 16)
+        return specification?.packets.find(pkt => pkt.kind === "command" &&
+            (pkt.name.toLocaleLowerCase() === command.toLocaleLowerCase())
+            || pkt.identifier === code)
+    }
 }
