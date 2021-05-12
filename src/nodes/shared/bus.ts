@@ -31,3 +31,10 @@ export function connectNode(node: Node, registerDevice: (dev: JDDevice) => void)
     connectStatus(node)
 }
 
+export function cleanPayload(payload: any) {
+    for(const key in payload) {
+        if (payload[key] === undefined)
+            delete payload[key]
+    }
+    return payload
+}
