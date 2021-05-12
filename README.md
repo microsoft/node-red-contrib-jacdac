@@ -6,6 +6,8 @@ Jacdac is a bus-based plug-and-play hardware and software stack for microcontrol
 
 The nodes connect to a Jacdac bus via a USB and allow to listen for events or sensor readings.
 
+![A rendering of a bus of Jacdac devices](./showcase.png)
+
 ## Requirements
 
 This node uses [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements. If your node-red process crashes with 
