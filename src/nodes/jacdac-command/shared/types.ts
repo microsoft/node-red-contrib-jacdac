@@ -1,4 +1,10 @@
-import { JacdacCommandFilterOptions, JacdacDeviceFilterOptions, JacdacServiceFilterOptions } from "src/nodes/shared/types";
+import {
+  JacdacCommandFilterOptions,
+  JacdacDeviceFilterOptions,
+  JacdacServiceFilterOptions,
+} from "../../shared/types";
 
-export interface JacdacCommandOptions extends JacdacDeviceFilterOptions, JacdacServiceFilterOptions, JacdacCommandFilterOptions {
-}
+export interface JacdacCommandOptions
+  extends JacdacDeviceFilterOptions,
+    JacdacServiceFilterOptions,
+    JacdacCommandFilterOptions {}

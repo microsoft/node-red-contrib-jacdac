@@ -5,10 +5,13 @@ declare const RED: EditorRED;
 
 RED.nodes.registerType<JacdacCommandEditorNodeProperties>("jacdac-command", {
   category: "function",
-  color: "#a6bbcf",
+  color: "#DEBD5C",
   defaults: {
     name: { value: "" },
+    device: { value: "" },
     service: { value: "", required: true },
+    serviceIndex: { value: undefined },
+    serviceInstanceName: { value: undefined },
     command: { value: "", required: true }
   },
   inputs: 1,
