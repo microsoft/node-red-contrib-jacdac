@@ -1,4 +1,4 @@
-import { objectToPacked } from "jacdac-ts";
+import { jdpack, objectToUnpacked } from "jacdac-ts";
 import { NodeInitializer } from "node-red";
 import { bus, connectStatus } from "../shared/bus";
 import {
@@ -21,6 +21,7 @@ const nodeInit: NodeInitializer = (RED): void => {
 
     this.on("input", async (msg, send, done) => {
       const { payload } = msg;
+
       for (const dev of bus
         .devices({ ignoreSelf: true, announced: true })
         .filter(filterDevice)) {
@@ -28,8 +29,9 @@ const nodeInit: NodeInitializer = (RED): void => {
           .services({ specification: true })
           .filter(filterService)) {
           const cmd = filterCommand(srv);
-          if (cmd) {
-            const data = objectToPacked(cmd, payload);
+          if (cmd?.packFormat) {
+            const unpacked = objectToUnpacked(cmd, payload);
+            const data = jdpack(cmd.packFormat, unpacked);
             await srv.sendCmdAsync(cmd.identifier, data);
           }
         }
