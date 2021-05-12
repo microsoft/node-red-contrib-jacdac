@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "jacdac-ts": "^1.13.19",
+    "jacdac-ts": "^1.13.21",
     "webusb": "^2.2.0"
   },
   "devDependencies": {

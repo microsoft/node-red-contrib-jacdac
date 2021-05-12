@@ -15,10 +15,10 @@ RED.nodes.registerType<JacdacCommandEditorNodeProperties>("jacdac-command", {
     command: { value: "", required: true }
   },
   inputs: 1,
-  outputs: 1,
+  outputs: 0,
   icon: "jacdac-command.png",
-  paletteLabel: "jacdac command",
+  paletteLabel: "jacdac cmd",
   label: function () {
-    return this.name || "jacdac command";
+    return this.name || "jacdac cmd";
   },
 });
