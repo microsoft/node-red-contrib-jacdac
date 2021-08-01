@@ -2,7 +2,7 @@
 
 [Node-RED](https://nodered.org) nodes to talk to [Jacdac](https://aka.ms/jacdac).
 
-Jacdac is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals such as sensors and actuators. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
+Jacdac is a bus-based plug-and-play hardware and software stack for microcontrollers and their peripherals. Jacdac is primarily designed for “modular electronics” scenarios that support rapid prototyping, creative exploration, making and learning through physical computing. Jacdac is designed to be cheap, flexible and extensible.
 
 The nodes connect to a Jacdac bus via a USB and allow to listen for events or sensor readings.
 
