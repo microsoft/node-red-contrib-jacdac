@@ -7,6 +7,7 @@ Jacdac is a bus-based plug-and-play hardware and software stack for microcontrol
 The nodes connect to a Jacdac bus via a USB and allow to listen for events or sensor readings.
 
 ![A rendering of a bus of Jacdac devices](./showcase.png)
+
 ## Install
 
 Use Palette manager in node-red or run the following command in your Node-RED user directory - typically ``~/.node-red``
