@@ -23,7 +23,7 @@ const nodeInit: NodeInitializer = (RED): void => {
             const { payload } = msg
 
             for (const dev of bus
-                .devices({ ignoreSelf: true, announced: true })
+                .devices({ ignoreInfrastructure: true, announced: true })
                 .filter(filterDevice)) {
                 for (const srv of dev
                     .services({ specification: true })
