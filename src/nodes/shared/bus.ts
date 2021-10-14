@@ -11,7 +11,7 @@ import {
 
 const opts = createNodeUSBOptions()
 const transport = createUSBTransport(opts)
-export const bus = new JDBus([transport])
+export const bus = new JDBus([transport], { client: true })
 
 export function connectStatus(node: Node) {
     const updateStatus = () => {
