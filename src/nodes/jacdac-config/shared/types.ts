@@ -1,10 +1,3 @@
-export interface JacdacConfigOptions {
-    /**
-     * Connect to physical bus using USB, requires LIBUSB
-     */
-    usb?: boolean
-    /**
-     * Connect to physical bus using serial, requires serialport
-     */
-    serial?: boolean
-}
+import { JacdacConnectionOptions } from "../../shared/types"
+
+export interface JacdacConfigOptions extends JacdacConnectionOptions {}

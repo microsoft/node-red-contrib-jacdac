@@ -1,5 +1,6 @@
 import {
     JacdacDeviceFilterOptions,
+    JacdacGlobalConfigOptions,
     JacdacRegisterFilterOptions,
     JacdacServiceFilterOptions,
 } from "../../shared/types"
@@ -7,7 +8,8 @@ import {
 export interface JacdacReportOptions
     extends JacdacDeviceFilterOptions,
         JacdacServiceFilterOptions,
-        JacdacRegisterFilterOptions {
+        JacdacRegisterFilterOptions,
+        JacdacGlobalConfigOptions {
     /**
      * Report updated data only
      */

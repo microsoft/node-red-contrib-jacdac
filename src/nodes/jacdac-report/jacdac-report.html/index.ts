@@ -19,6 +19,7 @@ RED.nodes.registerType<JacdacReportEditorNodeProperties>("jacdac-report", {
         serviceInstanceName: { value: undefined },
         register: { value: "" },
         updates: { value: true },
+        connection: { value: "", type: "jacdac-config" },
     },
     inputs: 0,
     outputs: 1,

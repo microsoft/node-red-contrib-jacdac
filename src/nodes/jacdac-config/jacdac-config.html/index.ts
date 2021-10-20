@@ -7,7 +7,7 @@ RED.nodes.registerType<JacdacConfigEditorNodeProperties>("jacdac-config", {
     category: "config",
     defaults: {
         name: { value: "" },
-        usb: { value: false },
+        usb: { value: undefined },
         serial: { value: true },
     },
     icon: "jacdac-config.png",

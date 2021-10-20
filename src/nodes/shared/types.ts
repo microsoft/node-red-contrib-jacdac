@@ -36,3 +36,21 @@ export interface JacdacRegisterFilterOptions {
 export interface JacdacCommandFilterOptions {
     command: string
 }
+
+export interface JacdacConnectionOptions {
+    /**
+     * Connect to physical bus using USB, requires LIBUSB
+     */
+    usb?: boolean
+    /**
+     * Connect to physical bus using serial, requires serialport
+     */
+    serial?: boolean
+}
+
+export interface JacdacGlobalConfigOptions {
+    /**
+     * Global connection options if any
+     */
+    connection?: JacdacConnectionOptions
+}
