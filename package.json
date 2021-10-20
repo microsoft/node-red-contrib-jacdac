@@ -27,8 +27,7 @@
         "nodes": {
             "jacdac-report": "./dist/nodes/jacdac-report/jacdac-report.js",
             "jacdac-event": "./dist/nodes/jacdac-event/jacdac-event.js",
-            "jacdac-command": "./dist/nodes/jacdac-command/jacdac-command.js",
-            "jacdac-config": "./dist/nodes/jacdac-config/jacdac-config.js"
+            "jacdac-command": "./dist/nodes/jacdac-command/jacdac-command.js"
         }
     },
     "dependencies": {

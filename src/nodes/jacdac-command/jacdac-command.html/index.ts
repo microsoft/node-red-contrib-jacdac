@@ -18,7 +18,6 @@ RED.nodes.registerType<JacdacCommandEditorNodeProperties>("jacdac-command", {
         serviceIndex: { value: undefined },
         serviceInstanceName: { value: undefined },
         command: { value: "", required: true },
-        connection: { value: "", type: "jacdac-config" },
     },
     inputs: 1,
     outputs: 0,

@@ -102,6 +102,10 @@ Create a production build:
 yarn build
 ```
 
+### Local debugging
+
+Local node debugging instructions at https://nodered.org/docs/creating-nodes/first-node#:~:text=To%20test%20a%20node%20module%20locally%20the%20npm,~%2F.node-red%2C%20run%3A%20npm%20install%20%3Clocation%20of%20node%20module%3E.
+
 ## Acknoledgments
 
 This repo was built using the [node-red TypeScript starter](https://github.com/alexk111/node-red-node-typescript-starter).
