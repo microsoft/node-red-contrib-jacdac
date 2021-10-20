@@ -17,7 +17,7 @@
         "build": "rm -rf dist && yarn copy && yarn build:editor && yarn build:runtime",
         "test": "jest --forceExit --detectOpenHandles --colors",
         "test:watch": "jest --forceExit --detectOpenHandles --watchAll",
-        "dev": "rm -rf dist && yarn copy && concurrently --kill-others --names 'COPY,EDITOR,RUNTIME,TEST' --prefix '({name})' --prefix-colors 'yellow.bold,cyan.bold,greenBright.bold,magenta.bold' 'onchange -v \"src/**/*.png\" \"src/**/*.svg\" -- yarn copy' 'yarn build:editor:watch' 'yarn build:runtime:watch' 'sleep 10; yarn test:watch'",
+        "dev": "rm -rf dist && yarn copy && concurrently --kill-others --names \"COPY,EDITOR,RUNTIME,TEST\" --prefix \"({name})\" --prefix-colors \"yellow.bold,cyan.bold,greenBright.bold,magenta.bold\" \"onchange -v 'src/**/*.png' 'src/**/*.svg' -- yarn copy\" \"yarn build:editor:watch\" \"yarn build:runtime:watch\" \"yarn test:watch\"",
         "lint": "prettier --ignore-path .eslintignore --check '**/*.{js,ts,md}'; eslint --ext .js,.ts .",
         "lint:fix": "prettier --ignore-path .eslintignore --write '**/*.{js,ts,md}'; eslint --ext .js,.ts . --fix"
     },
