@@ -1,16 +1,17 @@
 import { Node } from "node-red"
 import {
-    createUSBTransport,
-    createNodeUSBOptions,
     JDBus,
     CONNECTION_STATE,
     JDDevice,
     DEVICE_ANNOUNCE,
     CONNECT,
+    createWebSerialTransport,
+    NodeWebSerialIO,
 } from "jacdac-ts"
 
-const opts = createNodeUSBOptions()
-const transport = createUSBTransport(opts)
+const transport = createWebSerialTransport(() => {
+    return new NodeWebSerialIO(require("serialport"))
+})
 export const bus = new JDBus([transport], { client: true })
 
 export function connectStatus(node: Node) {
