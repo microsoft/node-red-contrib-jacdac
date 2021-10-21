@@ -15,7 +15,7 @@ const transports: Transport[] = [
     createUSBTransport(createNodeUSBOptions()),
     createNodeWebSerialTransport(require("serialport")),
 ]
-export const bus = new JDBus(transports, { client: true })
+export const bus = new JDBus(transports, { client: false })
 
 export function connectStatus(node: Node) {
     const updateStatus = () => {
