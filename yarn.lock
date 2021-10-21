@@ -4702,10 +4702,10 @@ istanbul-reports@^3.0.2:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jacdac-ts@^1.18.19:
-  version "1.18.19"
-  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.18.19.tgz#519051b5c8bb631b1892c6e4cc31bcee16226551"
-  integrity sha512-2X6llEnFTq5gbT+BcXmljTxTbznYXAhAn8oeYW8/X4XJ8IzlH2uuIzYa/yFBUF57h3Y2UKKGR1Gj2SNtapJNXA==
+jacdac-ts@^1.18.21:
+  version "1.18.21"
+  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.18.21.tgz#3219f557470f9fbafe1eeef5e1ec4532d4a35725"
+  integrity sha512-doAARm3pJyqk0x7OcwfPKhVTWyePzIu9vlvTsveHi8vVOdbBcYL2pqVB1p+c0C+4BSPZEJGUymhJ9Q0bgILy6A==
   dependencies:
     "@types/node" "^16.10.3"
     "@types/w3c-web-serial" "^1.0.2"
