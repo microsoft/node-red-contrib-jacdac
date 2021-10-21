@@ -5,7 +5,6 @@ import {
     JDDevice,
     DEVICE_ANNOUNCE,
     CONNECT,
-    createWebSerialTransport,
     createNodeUSBOptions,
     Transport,
     createUSBTransport,
