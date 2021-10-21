@@ -6,17 +6,15 @@ import {
     DEVICE_ANNOUNCE,
     CONNECT,
     createWebSerialTransport,
-    NodeWebSerialIO,
     createNodeUSBOptions,
     Transport,
     createUSBTransport,
+    createNodeWebSerialTransport,
 } from "jacdac-ts"
 
 const transports: Transport[] = [
     createUSBTransport(createNodeUSBOptions()),
-    createWebSerialTransport(() => {
-        return new NodeWebSerialIO(require("serialport"))
-    }),
+    createNodeWebSerialTransport(require("serialport")),
 ]
 export const bus = new JDBus(transports, { client: true })
 
