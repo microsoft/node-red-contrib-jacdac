@@ -1,17 +1,21 @@
 import { Node } from "node-red"
 import {
-    createUSBTransport,
-    createNodeUSBOptions,
     JDBus,
     CONNECTION_STATE,
     JDDevice,
     DEVICE_ANNOUNCE,
     CONNECT,
+    createNodeUSBOptions,
+    Transport,
+    createUSBTransport,
+    createNodeWebSerialTransport,
 } from "jacdac-ts"
 
-const opts = createNodeUSBOptions()
-const transport = createUSBTransport(opts)
-export const bus = new JDBus([transport], { client: true })
+const transports: Transport[] = [
+    createUSBTransport(createNodeUSBOptions()),
+    createNodeWebSerialTransport(require("serialport")),
+]
+export const bus = new JDBus(transports, { client: true })
 
 export function connectStatus(node: Node) {
     const updateStatus = () => {
