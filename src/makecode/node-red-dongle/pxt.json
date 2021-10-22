@@ -1,0 +1,16 @@
+{
+    "name": "jacdac-node-red-dongle",
+    "version": "0.0.0",
+    "description": "",
+    "dependencies": {
+        "jacdac": "github:microsoft/pxt-jacdac"
+    },
+    "files": ["main.ts", "README.md"],
+    "supportedTargets": ["maker", "microbit"],
+    "testDependencies": {
+        "jacdac-brain-f4": "*"
+    },
+    "preferredEditor": "tsprj",
+    "disableTargetTemplateFiles": true,
+    "binaryonly": true
+}
