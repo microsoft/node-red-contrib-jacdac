@@ -20,15 +20,16 @@ export function createDeviceFilter(options: JacdacDeviceFilterOptions) {
 export function createServiceFilter(options: JacdacServiceFilterOptions) {
     const { service, serviceIndex, serviceInstanceName } = options
 
+    const nservice = service
+        ? service.toLowerCase().replace(/\s/g, "")
+        : service
     const instanceNameRx = serviceInstanceName
         ? new RegExp(serviceInstanceName, "i")
         : undefined
     return (srv: JDService) =>
         (!service ||
             srv.serviceClass === parseInt(service, 16) ||
-            (srv.name &&
-                srv.name.toLocaleLowerCase() ===
-                    service.toLocaleLowerCase())) &&
+            (srv.specification && srv.specification.shortId === nservice)) &&
         (serviceIndex === undefined || serviceIndex == srv.serviceIndex) &&
         (!instanceNameRx || instanceNameRx.test(srv.instanceName))
 }
