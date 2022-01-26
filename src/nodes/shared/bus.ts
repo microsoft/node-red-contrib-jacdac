@@ -27,7 +27,7 @@ const rpio = tryRequire("rpio")
 const transports: Transport[] = [
     usb && createUSBTransport(createNodeUSBOptions()),
     serialport && createNodeWebSerialTransport(serialport),
-    rpio && createNodeSPITransport(require(rpio)),
+    rpio && createNodeSPITransport(rpio),
 ]
 export const bus = new JDBus(transports, {
     client: false,
