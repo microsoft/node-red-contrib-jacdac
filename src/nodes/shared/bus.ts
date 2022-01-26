@@ -9,13 +9,30 @@ import {
     Transport,
     createUSBTransport,
     createNodeWebSerialTransport,
+    createNodeSPITransport,
 } from "jacdac-ts"
 
+function tryRequire(id: string) {
+    try {
+        return require(id)
+    } catch (e) {
+        return undefined
+    }
+}
+
+const usb = tryRequire("webusb")
+const serialport = tryRequire("serialport")
+const rpio = tryRequire("rpio")
+
 const transports: Transport[] = [
-    createUSBTransport(createNodeUSBOptions()),
-    createNodeWebSerialTransport(require("serialport")),
+    usb && createUSBTransport(createNodeUSBOptions()),
+    serialport && createNodeWebSerialTransport(serialport),
+    rpio && createNodeSPITransport(require(rpio)),
 ]
-export const bus = new JDBus(transports, { client: false })
+export const bus = new JDBus(transports, {
+    client: false,
+    disableRoleManager: true,
+})
 
 export function connectStatus(node: Node) {
     const updateStatus = () => {
