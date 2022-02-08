@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-jacdac",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "description": "Microsoft Jacdac for Node-Red",
     "keywords": [
         "node-red",
@@ -36,7 +36,7 @@
     "optionalDependencies": {
         "webusb": "^2.2.0",
         "serialport": "^9.2.8",
-        "rpio": "^2.4.2"    
+        "rpio": "^2.4.2"
     },
     "devDependencies": {
         "@rollup/plugin-typescript": "^8.3.0",
