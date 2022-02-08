@@ -20,14 +20,14 @@ function tryRequire(id: string) {
     }
 }
 
+const rpio = tryRequire("rpio")
 const usb = tryRequire("webusb")
 const serialport = tryRequire("serialport")
-const rpio = tryRequire("rpio")
 
 const transports: Transport[] = [
+    rpio && createNodeSPITransport(rpio),
     usb && createUSBTransport(createNodeUSBOptions()),
     serialport && createNodeWebSerialTransport(serialport),
-    rpio && createNodeSPITransport(rpio),
 ]
 export const bus = new JDBus(transports, {
     client: false,
@@ -37,6 +37,7 @@ export const bus = new JDBus(transports, {
 export function connectStatus(node: Node) {
     const updateStatus = () => {
         node.log(`connection: ${bus.connected ? "connected" : "disconnected"}`)
+        node.log(`transports: ${bus.transports.map(tr => `${tr.type}: ${tr.connectionState}`)}`)
         node.status(
             bus.connected
                 ? { fill: "green", shape: "dot", text: "connected" }
