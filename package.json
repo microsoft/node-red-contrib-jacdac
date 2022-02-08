@@ -31,7 +31,9 @@
         }
     },
     "dependencies": {
-        "jacdac-ts": "^1.24.8",
+        "jacdac-ts": "^1.24.8"
+    },
+    "optionalDependencies": {
         "webusb": "^2.2.0",
         "serialport": "^9.2.8",
         "rpio": "^2.4.2"    
