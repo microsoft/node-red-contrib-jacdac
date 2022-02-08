@@ -31,9 +31,10 @@
         }
     },
     "dependencies": {
-        "jacdac-ts": "^1.24.5",
+        "jacdac-ts": "^1.24.8",
         "webusb": "^2.2.0",
-        "serialport": "^9.2.8"
+        "serialport": "^9.2.8",
+        "rpio": "^2.4.2"    
     },
     "devDependencies": {
         "@rollup/plugin-typescript": "^8.3.0",
