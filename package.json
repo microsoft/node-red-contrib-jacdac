@@ -23,6 +23,9 @@
     },
     "author": "Microsoft",
     "license": "MIT",
+    "engines": {
+      "node": ">=14.17.0"
+    },  
     "node-red": {
         "nodes": {
             "jacdac-report": "./dist/nodes/jacdac-report/jacdac-report.js",
