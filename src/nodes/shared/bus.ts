@@ -21,12 +21,12 @@ function tryRequire(id: string) {
 }
 
 const rpio = tryRequire("rpio")
-const usb = tryRequire("webusb")
+const usb = tryRequire("usb")
 const serialport = tryRequire("serialport")
 
 const transports: Transport[] = [
     rpio && createNodeSPITransport(rpio),
-    usb && createUSBTransport(createNodeUSBOptions()),
+    usb && createUSBTransport(createNodeUSBOptions(usb.WebUSB)),
     serialport && createNodeWebSerialTransport(serialport),
 ]
 export const bus = new JDBus(transports, {
