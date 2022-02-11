@@ -21,11 +21,12 @@ function tryRequire(id: string) {
 }
 
 const rpio = tryRequire("rpio")
+const spi = tryRequire("spi-device")
 const usb = tryRequire("usb")
 const serialport = tryRequire("serialport")
 
 const transports: Transport[] = [
-    rpio && createNodeSPITransport(rpio),
+    rpio && createNodeSPITransport(rpio, spi),
     usb && createUSBTransport(createNodeUSBOptions(usb.WebUSB)),
     serialport && createNodeWebSerialTransport(serialport),
 ]

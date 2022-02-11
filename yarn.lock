@@ -5062,10 +5062,10 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jacdac-ts@^1.24.14:
-  version "1.24.14"
-  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.24.14.tgz#819ade07766b980d18ddeb73d6dcd32f8a10f2e8"
-  integrity sha512-26RLiwBSaE8GbrTjcH+9N45xoFjGoRWwwCLFPuW4CVQyqQ7tMIRHVhGXUOf9tFN1NR51ATWUsRw61S6rNkaIzw==
+jacdac-ts@^1.24.15:
+  version "1.24.15"
+  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.24.15.tgz#011da45a2bdad5a24f4c59fbe1f3ee9a7bec90b2"
+  integrity sha512-5aZVs6nkSAQJ+G2IdDbZu1uhmESjo3NKDZMkCHV2hjmcDGZX/veXMTEjdEis16e6zWwEgL0h+JIjjcDVgcXxFQ==
   dependencies:
     "@types/node" "^17.0.16"
     "@types/w3c-web-serial" "^1.0.2"
@@ -6338,7 +6338,7 @@ mute-stream@~0.0.4:
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.8.tgz"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-nan@^2.14.1, nan@^2.15.0:
+nan@^2.14.1, nan@^2.14.2, nan@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
   integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
@@ -8005,6 +8005,14 @@ spdx-license-ids@^3.0.0:
   version "3.0.7"
   resolved "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.7.tgz"
   integrity sha512-U+MTEOO0AiDzxwFvoa4JVnMV6mZlJKk2sBLt90s7G0Gd0Mlknc7kxEn3nuDPNZRta7O2uy8oLcZLVT+4sqNZHQ==
+
+spi-device@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/spi-device/-/spi-device-3.1.2.tgz#ba0f4b79638e8cb9a64840fe38176666cffb482e"
+  integrity sha512-5ubnDcpFjMAiO32j7Jrg/EMSmnInoh9LFzh/abVSJxTjCbmUQdRDVgNG5mRlOpMZc+SCHNSzqKVHGe8n0mVKwA==
+  dependencies:
+    bindings "^1.5.0"
+    nan "^2.14.2"
 
 split2@^3.0.0, split2@^3.1.0:
   version "3.2.2"
