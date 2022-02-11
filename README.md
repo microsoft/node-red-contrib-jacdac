@@ -14,10 +14,6 @@ Use Palette manager in node-red or run the following command in your Node-RED us
 
     npm install node-red-contrib-jacdac
 
-### !!Requirements!!
-
-If your board uses WebUSB to connect to the host computer, you will need [node-usb](https://github.com/tessel/node-usb) which has specific installation requirements. If your node-red process crashes with
-`LIBUSB_ERROR_NOT_SUPPORTED`, your USB setup is not right.
 
 ## Jacdac firmware
 

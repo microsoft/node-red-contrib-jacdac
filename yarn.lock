@@ -1918,6 +1918,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.16.tgz#e3733f46797b9df9e853ca9f719c8a6f7b84cd26"
   integrity sha512-ydLaGVfQOQ6hI1xK2A5nVh8bl0OGoIfYMxPWHqqYe9bTkWCfqiVvZoh2I/QF2sNSkZzZyROBoTefIEI+PB6iIA==
 
+"@types/node@^17.0.17":
+  version "17.0.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.17.tgz#a8ddf6e0c2341718d74ee3dc413a13a042c45a0c"
+  integrity sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz"
@@ -5057,10 +5062,10 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jacdac-ts@^1.24.10:
-  version "1.24.10"
-  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.24.10.tgz#d6b58ba1ae7f533567733442870a43d099002e48"
-  integrity sha512-fsCV6DwB1FWCZK3iKUDV8R8CkSj7G9j38HadcqBFtqj5tHf/5oWX1UvYYURO5xX2W/U1PeAAg33INklRUCWjBQ==
+jacdac-ts@^1.24.14:
+  version "1.24.14"
+  resolved "https://registry.yarnpkg.com/jacdac-ts/-/jacdac-ts-1.24.14.tgz#819ade07766b980d18ddeb73d6dcd32f8a10f2e8"
+  integrity sha512-26RLiwBSaE8GbrTjcH+9N45xoFjGoRWwwCLFPuW4CVQyqQ7tMIRHVhGXUOf9tFN1NR51ATWUsRw61S6rNkaIzw==
   dependencies:
     "@types/node" "^17.0.16"
     "@types/w3c-web-serial" "^1.0.2"
@@ -7595,10 +7600,10 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-rollup@^2.67.1:
-  version "2.67.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.67.1.tgz#4402665706fa00f321d446ce45f880e02cf54f01"
-  integrity sha512-1Sbcs4OuW+aD+hhqpIRl+RqooIpF6uQcfzU/QSI7vGkwADY6cM4iLsBGRM2CGLXDTDN5y/yShohFmnKegSPWzg==
+rollup@^2.67.2:
+  version "2.67.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.67.2.tgz#d95e15f60932ad21e05a870bd0aa0b235d056f04"
+  integrity sha512-hoEiBWwZtf1QdK3jZIq59L0FJj4Fiv4RplCO4pvCRC86qsoFurWB4hKQIjoRf3WvJmk5UZ9b0y5ton+62fC7Tw==
   optionalDependencies:
     fsevents "~2.3.2"
 
