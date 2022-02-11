@@ -16,11 +16,12 @@ jobs:
               uses: actions/setup-node@v2.1.2
               with:
                   node-version: ${{ matrix.node-version }}
-
+            - run: npm install -g node-red-dev
             - name: yarn, build and test
               run: |
                   yarn
                   yarn build
+                  yarn validate
             - run: npx semantic-release
               if: ${{ github.ref == 'refs/heads/main' }}
               env:

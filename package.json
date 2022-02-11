@@ -19,7 +19,8 @@
     "test:watch": "jest --forceExit --detectOpenHandles --watchAll",
     "dev": "rm -rf dist && yarn copy && concurrently --kill-others --names \"COPY,EDITOR,RUNTIME,TEST\" --prefix \"({name})\" --prefix-colors \"yellow.bold,cyan.bold,greenBright.bold,magenta.bold\" \"onchange -v 'src/**/*.png' 'src/**/*.svg' -- yarn copy\" \"yarn build:editor:watch\" \"yarn build:runtime:watch\" \"yarn test:watch\"",
     "lint": "prettier --ignore-path .eslintignore --check '**/*.{js,ts,md}'; eslint --ext .js,.ts .",
-    "lint:fix": "prettier --ignore-path .eslintignore --write '**/*.{js,ts,md}'; eslint --ext .js,.ts . --fix"
+    "lint:fix": "prettier --ignore-path .eslintignore --write '**/*.{js,ts,md}'; eslint --ext .js,.ts . --fix",
+    "validate": "node-red-dev validate"
   },
   "author": "Microsoft",
   "license": "MIT",
@@ -27,7 +28,7 @@
     "node": ">=12.0.0"
   },
   "node-red": {
-    "version": ">=2.0.0",
+    "version": ">=1.3.7",
     "nodes": {
       "jacdac-report": "./dist/nodes/jacdac-report/jacdac-report.js",
       "jacdac-event": "./dist/nodes/jacdac-event/jacdac-event.js",
