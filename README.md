@@ -14,22 +14,12 @@ Use Palette manager in node-red or run the following command in your Node-RED us
 
     npm install node-red-contrib-jacdac
 
+## Jacdac hardware
 
-## Jacdac firmware
+In order to connect to Jacdac modules, you will need to connect to a USB module or a SPI bridge.
 
-You will need to connect a device with Jacdac firmware and USB port.
-You can learn more about compatible hardware at https://aka.ms/jacdac.
-
-If you have a micro:bit V2 at hand, you can convert it into a Jacdac device by dropping
-custom firmware.
-
--   go to https://makecode.microbit.org/
--   create a new project
--   click on the project settings, `Extensions`
--   search for https://github.com/microsoft/pxt-jacdac/devices/microbit and import it
--   use the blocks under `Servers` to start which sensor you want
--   download to your micro:bit V2
--   enjoy data!
+- [Raspberry Pi + JacHAT bridge](https://microsoft.github.io/jacdac-docs/devices/microsoft/research/jmspibridgev37v37/) 
+- [micro:bit V2 + Jacdapter](https://microsoft.github.io/jacdac-docs/devices/microbit/foundation/microbitv2)
 
 ## Nodes
 
@@ -53,54 +43,6 @@ to services. The results of command can be inferred from the content of the regi
 
 You can browse the [services specification catalog](https://microsoft.github.io/jacdac-docs/services/) to discover which commands are available and how their payload should be formatted. The payload can either be a number, string or boolean for simple t
 ypes. Or an array or JSON object for complex requests.
-
-## Developer section
-
-### Adding Nodes
-
-You can quickly scaffold a new node and add it to the node set. Use the following command to create `my-new-node-type` node:
-
-```
-yarn add-node my-new-node-type
-```
-
-The node generator is based on mustache templates. At the moment there are three templates available:
-
--   `blank` (used by default) - basic node for Node-RED >=1.0
--   `blank-0` - node with a backward compatibility for running on Node-RED <1.0
--   `config` - configuration node
-
-To generate a node using a template, specify it as the third argument:
-
-```
-yarn add-node my-new-node-type blank
-```
-
-or
-
-```
-yarn add-node my-new-node-config config
-```
-
-### Developing Nodes
-
-Build & Test in Watch mode:
-
-```
-yarn dev
-```
-
-### Building Node Set
-
-Create a production build:
-
-```
-yarn build
-```
-
-### Local debugging
-
-Local node debugging instructions at https://nodered.org/docs/creating-nodes/first-node#:~:text=To%20test%20a%20node%20module%20locally%20the%20npm,~%2F.node-red%2C%20run%3A%20npm%20install%20%3Clocation%20of%20node%20module%3E.
 
 ## Acknoledgments
 
