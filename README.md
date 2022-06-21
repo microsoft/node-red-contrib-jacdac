@@ -18,7 +18,7 @@ Use Palette manager in node-red or run the following command in your Node-RED us
 
 In order to connect to Jacdac modules, you will need to connect to a USB module or a SPI bridge.
 
-- [Raspberry Pi + JacHAT bridge](https://microsoft.github.io/jacdac-docs/devices/microsoft-research/jmspibridgev37v37/) 
+- [Raspberry Pi + JacHAT bridge](https://microsoft.github.io/jacdac-docs/devices/microsoft-research/jmspibridgev37/) 
 - [micro:bit V2 + Jacdapter](https://microsoft.github.io/jacdac-docs/devices/microbit/foundation/microbitv2)
 
 ## Nodes
